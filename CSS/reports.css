@@ -1,0 +1,214 @@
+/*=================== REPORTS ========================== */
+.reports-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.reports-list {
+    width: 30%;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.reports-list:hover {
+    box-shadow: none;
+}
+/*----------- SEARCH BAR ------*/
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.1rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar i {
+    position: relative;
+    color: var(--color-dark-variant);
+    right: 0.6rem;
+    cursor: pointer;
+}
+/*-------end of SEARCH BAR ----------*/
+/*------- FILTER -----*/
+.filter-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    background: var(--color-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.filter-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+/*------ end of FILTER ------*/
+
+.reports-list h2 {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+}
+
+.report-item {
+    display: flex;
+    margin-bottom: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.report-item:last-child {
+    border-bottom: none;
+}
+
+.report-item.active {
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+}
+
+.report-item:hover {
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+}
+
+.report-title {
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.report-description {
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+    margin: 0;
+}
+
+.report-item small {
+    color: var(--color-info-dark);
+}
+
+.report-details {
+    width: 70%;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.report-details:hover {
+    box-shadow: none;
+}
+
+.report-details h2 {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+}
+
+.report-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-header img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.report-info h4 {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+}
+
+.report-info small {
+    color: var(--color-info-dark);
+}
+
+.report-content {
+    padding: 1rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-bottom: 1.5rem;
+}
+
+.report-content p {
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.report-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.report-actions button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.report-actions button:hover {
+    background: var(--color-dark);
+}
+
+.report-actions button.secondary {
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+.report-actions button.secondary:hover {
+    background: var(--color-dark);
+    color: var(--color-white);
+}

@@ -29,12 +29,16 @@ closeBtn.addEventListener('click', () => {
 
 //change theme
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
     const themeToggler = document.querySelector(".theme-toggler");
-    if (!themeToggler) return; // If there is no switch, abort the execution
+    if (!themeToggler) {
+        console.error("Theme toggler not found!");
+        return;
+    }
 
     const body = document.body;
 
-    // Function for applying the topic
+    // Function for applying the theme
     function applyTheme(theme) {
         if (theme === "dark") {
             body.classList.add("dark-theme-variables");

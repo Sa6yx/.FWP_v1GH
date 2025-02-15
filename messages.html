@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABYR WEB PR2 - Settings</title>
-    <link rel="stylesheet" href="CSS/settings.css">
+    <title>Messages - SABYTOR</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/messages.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +45,7 @@
                     <i class="material-symbols-sharp">insights</i>
                     <h3>Analytics</h3>
                 </a>
-                <a href="messages.html">
+                <a href="messages.html" class="active">
                     <i class="material-symbols-sharp">mail_outline</i>
                     <h3>Messages</h3>
                     <span class="message-count">3</span>
@@ -57,7 +58,7 @@
                     <i class="material-symbols-sharp">report_gmailerrorred</i>
                     <h3>Reports</h3>
                 </a>
-                <a href="settings.html" class="active">
+                <a href="settings.html">
                     <i class="material-symbols-sharp">settings</i>
                     <h3>Settings</h3>
                 </a>
@@ -73,74 +74,75 @@
         </aside>
         <!----------------------- END OF ASIDE ------------------------------->
         <main>
-            <h1>Settings</h1>
-            <div class="date">
+            <h1>Messages</h1>
+            <!-- <div class="date">
                 <input type="date">
                 <div id="clock"></div>
-            </div>
-            <div class="settings-container">
-                <div class="settings">
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">light</i>Theme</h3>
-                        <div class="theme-toggler">
-                            <i class="material-symbols-sharp active">light_mode</i>
-                            <i class="material-symbols-sharp">dark_mode</i>
+            </div> -->
+            <div class="messages-container">
+                <div class="messages-list">
+                    <h2>Inbox</h2>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search messages...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-options">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Unread</button>
+                        <button class="filter-btn">Starred</button>
+                    </div>
+                    <div class="message-item active">
+                        <div class="message-sender">
+                            <img src="images/geto.jpg" alt="Sender Photo">
+                            <h4>Suguru Geto</h4>
+                            <button class="star-btn">
+                                <i class="far fa-star"></i>
+                            </button>
                         </div>
+                        <p class="message-preview">Hey, can you check the latest report?</p>
+                        <small class="text-muted">2 hours ago</small>
                     </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">notifications</i>Notifications</h3>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
+                    <div class="message-item">
+                        <div class="message-sender">
+                            <img src="images/choso.jpg" alt="Sender Photo">
+                            <h4>Choso</h4>
+                            <button class="star-btn">
+                                <i class="far fa-star"></i>
+                            </button>
+                        </div>
+                        <p class="message-preview">We need to discuss the new project timeline</p>
+                        <small class="text-muted">5 hours ago</small>
                     </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">translate</i>Language</h3>
-                        <select>
-                            <option value="en">English</option>
-                            <option value="ru">Russian</option>
-                            <option value="kg">Kyrgyz</option>
-                        </select>
-                    </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">privacy_tip</i>Privacy</h3>
-                        <button class="btn-primary">Manage Privacy Settings</button>
+                    <div class="message-item">
+                        <div class="message-sender">
+                            <img src="images/toji.jpg" alt="Sender Photo">
+                            <h4>Toji Fushiguro</h4>
+                            <button class="star-btn">
+                                <i class="far fa-star"></i>
+                            </button>
+                        </div>
+                        <p class="message-preview">Please review the attached document</p>
+                        <small class="text-muted">1 day ago</small>
                     </div>
                 </div>
-                <!--prof sett-->
-                <div class="profile-settings">
-                    <h2>Profile Settings</h2>
-                    <div class="setting-item">
-                        <h3>User Name</h3>
-                        <div class="input-group">
-                            <input type="text" id="username" placeholder="Enter new username">
-                            <button class="btn-primary" onclick="updateUsername()">Save</button>
+                <div class="message-details">
+                    <h2>Message Details</h2>
+                    <div class="message-header">
+                        <img src="images/geto.jpg" alt="Sender Photo">
+                        <div class="sender-info">
+                            <h4>Suguru Geto</h4>
+                            <small class="text-muted">geto@sabytor.com</small>
                         </div>
+                        <button class="mark-as-read-btn">
+                            <i class="fas fa-envelope-open"></i> Mark as Read
+                        </button>
                     </div>
-                    <div class="setting-item">
-                        <h3>Profile Picture</h3>
-                        <div class="profile-photo-upload">
-                            <img id="profile-picture" src="images/gojo.jpg" alt="Profile Picture">
-                            <input type="file" id="profile-picture-input" accept="image/*" onchange="updateProfilePicture(event)">
-                            <label for="profile-picture-input" class="btn-primary">Upload Photo</label>
-                        </div>
+                    <div class="message-content">
+                        <p>Hey, can you check the latest report? I need your feedback before we proceed</p>
                     </div>
-                    <div class="setting-item">
-                        <h3>Contact Information</h3>
-                        <div class="input-group">
-                            <input type="email" id="email" placeholder="Enter new email">
-                            <input type="tel" id="phone" placeholder="Enter new phone number">
-                            <button class="btn-primary" onclick="updateContactInfo()">Save</button>
-                        </div>
-                    </div>
-                    <div class="setting-item">
-                        <h3>Password</h3>
-                        <div class="input-group">
-                            <input type="password" id="current-password" placeholder="Current password">
-                            <input type="password" id="new-password" placeholder="New password">
-                            <input type="password" id="confirm-password" placeholder="Confirm new password">
-                            <button class="btn-primary" onclick="updatePassword()">Save</button>
-                        </div>
+                    <div class="message-reply">
+                        <textarea placeholder="Type your reply..."></textarea>
+                        <button class="btn-primary">Send Reply</button>
                     </div>
                 </div>
             </div>
@@ -151,6 +153,10 @@
                 <button id="menu-btn">
                     <i class="material-symbols-sharp">menu</i>
                 </button>
+                <div class="theme-toggler">
+                    <i class="material-symbols-sharp active">light_mode</i>
+                    <i class="material-symbols-sharp">dark_mode</i>
+                </div>
                 <div class="profile">
                     <div class="info">
                         <p>Hey, <b>Sabyr</b></p>
@@ -160,9 +166,9 @@
                         <img src="images/gojo.jpg" alt="">
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
     <script src="JS/index.js"></script>
 </body>
-</html> 
+</html>

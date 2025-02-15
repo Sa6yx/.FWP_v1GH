@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABYR WEB PR2 - Customers</title>
+    <title>Reports - SABYTOR</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/reports.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!--  ICONS  --> 
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&
-    icon_names=close " />
-    <!--  STYLE SHEET  -->
+    icon_names=close" />
 </head>
 <body>
     <div class="container">
@@ -33,7 +33,7 @@
                     <i class="material-symbols-sharp">team_dashboard</i>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="customers.html" class="active">
+                <a href="customers.html">
                     <i class="material-symbols-sharp">person_outline</i>
                     <h3>Customers</h3>
                 </a>
@@ -48,25 +48,24 @@
                 <a href="messages.html">
                     <i class="material-symbols-sharp">mail_outline</i>
                     <h3>Messages</h3>
-                    <span class="message-count">3</span>
                 </a>
                 <a href="#">
                     <i class="material-symbols-sharp">inventory</i>
                     <h3>Products</h3>
                 </a>
-                <a href="reports.html">
+                <a href="reports.html" class="active">
                     <i class="material-symbols-sharp">report_gmailerrorred</i>
                     <h3>Reports</h3>
                 </a>
                 <a href="settings.html">
-                    <i class="material-symbols-sharp">Settings</i>
+                    <i class="material-symbols-sharp">settings</i>
                     <h3>Settings</h3>
                 </a>
                 <a href="#">
                     <i class="material-symbols-sharp">add</i>
                     <h3>Add product</h3>
                 </a>
-                <a href="index-2.html">
+                <a href="index.html">
                     <i class="material-symbols-sharp">logout</i>
                     <h3>Log out</h3>
                 </a>
@@ -74,43 +73,55 @@
         </aside>
         <!----------------------- END OF ASIDE ------------------------------->
         <main>
-            <h1>Customers</h1>
-            <div class="date">
-                <input type="date">
-                <div id="clock"></div>
-            </div>
-            <div class="insights">
-
-                <!------------ END OF INCOME ---------------------->
-            </div>
-            <div class="recent-customers">
-                <table>
-                    <thead>
-                        <tr>
-                            <!-- <th>Profile</th>
-                            <th>Customer Name</th>
-                            <th>Phone Number</th>
-                            <th>Location</th>
-                            <th>Status</th> -->
-                            <th>Profile</th>
-                            <th onclick="sortTable('customerName')">Customer Name <i class="material-symbols-sharp">sort</i></th>
-                            <th onclick="sortTable('phoneNumber')">Phone Number <i class="material-symbols-sharp">sort</i></th>
-                            <th onclick="sortTable('location')">Location <i class="material-symbols-sharp">sort</i></th>
-                            <th onclick="sortTable('status')">Status <i class="material-symbols-sharp">sort</i></th>
-                        </tr>
-                    </thead>
-                    <tbody class="customer">
-                        <!---->
-                    </tbody>
-                </table>
-                <a href="#">Show All</a>
-            </div>
-            <div class="pagination">
-                <button id="prev-page">Previous</button>
-                <span id="page-info">Page 1 of 5</span>
-                <button id="next-page">Next</button>
+            <h1>Reports</h1>
+            <div class="reports-container">
+                <div class="reports-list">
+                    <h2>Report List</h2>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search reports...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-options">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Recent</button>
+                        <button class="filter-btn">Archived</button>
+                    </div>
+                    <div class="report-item active">
+                        <h4 class="report-title">Monthly Sales Report</h4>
+                        <p class="report-description">Summary of sales performance for the month</p>
+                        <small class="text-muted">Last updated: 2 days ago</small>
+                    </div>
+                    <div class="report-item">
+                        <h4 class="report-title">Customer Feedback Analysis</h4>
+                        <p class="report-description">Analysis of customer feedback and satisfaction</p>
+                        <small class="text-muted">Last updated: 1 week ago</small>
+                    </div>
+                    <div class="report-item">
+                        <h4 class="report-title">Inventory Status</h4>
+                        <p class="report-description">Current inventory levels and stock status</p>
+                        <small class="text-muted">Last updated: 3 days ago</small>
+                    </div>
+                </div>
+                <div class="report-details">
+                    <h2>Report Details</h2>
+                    <div class="report-header">
+                        <img src="images/rep.jpg" alt="Report Icon">
+                        <div class="report-info">
+                            <h4>Monthly Sales Report</h4>
+                            <small class="text-muted">Reported on: 2025-02-16</small>
+                        </div>
+                    </div>
+                    <div class="report-content">
+                        <p>This report provides a detailed analysis of the sales performance for the month of February 2025. It includes data on total revenue, top-selling products, and regional sales breakdown</p>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn-primary">Download PDF</button>
+                        <button class="secondary">Share</button>
+                    </div>
+                </div>
             </div>
         </main>
+        <!----------------------- END OF MAIN ------------------------------->
         <div class="right">
             <div class="top">
                 <button id="menu-btn">
@@ -130,27 +141,9 @@
                     </div>
                 </div>
             </div>
-            <h2 class="filter-h2">Filter / Search</h2>
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search by name, phone, or location...">
-                <button id="search-btn"><i class="material-symbols-sharp">search</i></button>
-            </div>
-            <div class="region-filter">
-                <select id="region-select">
-                    <option value="All">All</option>
-                    <option value="Bishkek">Bishkek</option>
-                    <option value="Osh">Osh</option>
-                    <option value="Karakol">Karakol</option>
-                    <option value="Jalal-Abad">Jalal-Abad</option>
-                    <option value="Naryn">Naryn</option>
-                    <option value="Talas">Talas</option>
-                    <option value="Batken">Batken</option>
-                </select>
-            </div>
         </div>
     </div>
-    <script src="JS/customers-list.js"></script>
-    <script src="JS/customers.js"></script>
+
     <script src="JS/index.js"></script>
 </body>
-</html>
+</html> 

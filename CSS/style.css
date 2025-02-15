@@ -178,7 +178,7 @@
      font-size: 1.2rem;
  }
 
- /*--------- [Main Page] -----------*/
+ /*=============== [Main Page] ======================================================================================================*/
  
  *{
      margin: 0;
@@ -213,39 +213,21 @@ body {
      grid-template-columns: 14rem auto 23rem;
 }
 
-a{
-     color: var(--color-dark);
-}
+a{color: var(--color-dark);}
 
-img {
-     display: block;
-     width: 100%;
-}
+img {display: block; width: 100%;}
 
-h1 {
-     font-weight: 800;
-     font-size: 1.8rem;
-}
+h1 {font-weight: 800; font-size: 1.8rem;}
 
-h2 {
-     font-size: 1.4rem;
-}
+h2 {font-size: 1.4rem;}
 
-h3 {
-     font-size: 0.87rem;
-}
+h3 {font-size: 0.87rem;}
 
-h4 {
-     font-size: 0.8rem;
-}
+h4 {font-size: 0.8rem;}
 
-h5 {
-     font-size: 0.77rem;
-}
+h5 {font-size: 0.77rem;}
 
-small {
-     font-size: 0.75rem;
-}
+small {font-size: 0.75rem;}
 
 .profile-photo {
      width: 2.8rem;
@@ -254,34 +236,21 @@ small {
      overflow: hidden;
 }
 
-.text-muted {
-     color: var(--color-info-dark);
-}
+.text-muted {color: var(--color-info-dark);}
 
-p{
-     color: var(--color-dark-variant);
-}
+p{color: var(--color-dark-variant);}
 
-b {
-     color: var(--color-dark);
-}
+b {color: var(--color-dark);}
 
-.primary {
-     color: var(--color-primary);
-}
-.danger {
-     color: var(--color-danger);
-}
-.success {
-     color: var(--color-success);
-}
-.warning {
-     color: var(--color-warning);
-}
+.primary {color: var(--color-primary);}
 
-aside {
-     height: 100vh;
-}
+.danger {color: var(--color-danger);}
+
+.success {color: var(--color-success);}
+
+.warning {color: var(--color-warning);}
+
+aside {height: 100vh;}
 
 aside .top{
      display: flex;
@@ -309,7 +278,7 @@ aside .close{
      display: none;
 }
 
-/*============== SIBEBAR ===============*/
+/*============== SIBEBAR ============================================================================================================*/
 aside .sidebar{     
      display: flex;
      flex-direction: column;
@@ -379,7 +348,7 @@ aside .sidebar .message-count {
      border-radius: var(--border-radius-1);
 }
 
-/*============= MAIN ===============*/
+/*============= MAIN ==================================================================================================================*/
 main{
      margin-top: 1.4rem;
 }
@@ -393,21 +362,16 @@ main .date{
      padding: 0.5rem 1.6rem;
 }
 #clock {
-     display: inline-block;
-     background: var(--color-light);
-     padding: 0.4rem 1.8rem;
-     border-radius: var(--card-border-radius);
-     top: 5rem;
-     left: 30rem;
-     transition: all 300ms ease;
-     position: absolute;
-     display: inline-block;
-     font-family: Poppins, sans-serif;
-     font-size: 1rem;
-     font-weight: 400;
-     color: var(--color-dark);
-     transition: all 300ms ease;
-     z-index: 0;
+    background: var(--color-light);
+    padding: 0.4rem 1.8rem; 
+    border-radius: var(--card-border-radius);
+    top: 5rem;
+    left: 30rem;
+    position: absolute;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    color: var(--color-dark);
+    z-index: 0;
 }
 
 main .date input[type='date']{
@@ -523,7 +487,7 @@ main .insights small {
      display: block;
 }
 
-/*================== RECENT ORDERS ====================*/
+/*================== RECENT ORDERS =====================================================================================================*/
 main .recent-orders {
      margin-top: 2rem;
 }
@@ -563,7 +527,7 @@ main .recent-orders a {
      color: var(--color-primary);
 }
 
-/*=============== RIGHT ===================*/
+/*=============== RIGHT =================================================================================================================*/
 .right {
      margin-top: 1.4rem;
 }
@@ -609,7 +573,7 @@ main .recent-orders a {
      gap: 2rem;
      text-align: right;
 }
-/*=============== RECENT UPDATES================*/
+/*=============== RECENT UPDATES========================================================================================================*/
 .right .recent-updates {
      margin-top: 1rem;
 }
@@ -637,7 +601,7 @@ main .recent-orders a {
      margin-bottom: 1rem;
 }
 
-/*============ SALES ANALYTICS ===============*/
+/*============ SALES ANALYTICS ==========================================================================================================*/
 .right .sales-analytics {
      margin-top: 2rem;
 }
@@ -675,7 +639,7 @@ main .recent-orders a {
      padding: 0.6rem;
      color: var(--color-white);
      border-radius: 50%;
-     background: red;
+     background: rgb(255, 255, 255);
 }
 
 .right .sales-analytics .item.online .icon {
@@ -707,7 +671,7 @@ main .recent-orders a {
      font-weight: 600;
 }
 
-/*=================== MEDIA QUERIES =====================*/
+/*=================== MEDIA QUERIES ====================================================================================================*/
 @media screen and (max-width: 1200px) {
      .container {
           width: 94%;
@@ -847,7 +811,6 @@ main .recent-orders a {
           font-size: 2rem;
      }
 }
-/*======================== OTHER FEA ===========================================================================================================*/
 
 /*======================= CUSTOMERS ================================================================================================*/
 main .recent-customers {
@@ -1236,6 +1199,7 @@ input:checked + .slider:before {
 }
 
 .profile-settings input {
+     background: var(--color-white);
      width: 100%;
      padding: 0.75rem;
      border: 1px solid var(--color-light);
@@ -1306,4 +1270,3 @@ input:checked + .slider:before {
      background: var(--color-dark);
 }
 
-     
