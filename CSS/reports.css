@@ -146,6 +146,11 @@
     color: var(--color-dark);
 }
 
+.report-details .section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .report-header {
     display: flex;
     align-items: center;

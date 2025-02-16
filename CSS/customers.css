@@ -1,0 +1,70 @@
+/* =========== ADD CUSTOMERS ==================================================================================================== */
+.add-customer {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 1rem;
+    transition: all 300ms ease;
+}
+
+.add-customer:hover {
+    box-shadow: none;
+}
+
+.add-customer h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    border-bottom: 1px solid var(--color-dark);
+    padding-bottom: 0.5rem;
+}
+
+.add-customer .input-group {
+    margin-bottom: 1rem;
+}
+
+.add-customer .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+    font-size: 0.9rem;
+}
+
+.add-customer .input-group input,
+.add-customer .input-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    background: var(--color-background);
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.add-customer .input-group input:focus,
+.add-customer .input-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.add-customer .btn-primary {
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.add-customer .btn-primary:hover {
+    background: var(--color-dark);
+}

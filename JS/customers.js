@@ -182,3 +182,36 @@ document.getElementById('prev-page').addEventListener('click', () => {
     }
 });
 
+// ============== ADD CUSTOMERS ======================================================================================================= //
+document.getElementById('add-customer-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Get form values
+    const customerName = document.getElementById('customer-name').value;
+    const phoneNumber = document.getElementById('phone-number').value;
+    const location = document.getElementById('location').value;
+    const status = document.getElementById('status').value;
+    const profilePictureInput = document.getElementById('profile-picture');
+    const profilePicture = profilePictureInput.files[0] ? URL.createObjectURL(profilePictureInput.files[0]) : 'images/user3.jpeg'; // Default image
+
+    // Create new customer object
+    const newCustomer = {
+        customerName,
+        phoneNumber,
+        location,
+        status,
+        profilePicture,
+    };
+
+    // Add the new customer to the Customers array
+    Customers.push(newCustomer);
+
+    // Refresh  table
+    fillCustomersTable(Customers.slice(0, 8)); // Show only 8 customers initially
+
+    // Reset form
+    document.getElementById('add-customer-form').reset();
+
+    // Success message
+    alert('Customer added successfully!');
+});

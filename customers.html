@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABYR WEB PR2 - Customers</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/customers.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,6 +148,35 @@
                     <option value="Batken">Batken</option>
                 </select>
             </div>
+            <div class="add-customer">
+                <h2>Add Customer</h2>
+                <form id="add-customer-form">
+                    <div class="input-group">
+                        <label for="customer-name">Customer Name</label>
+                        <input type="text" id="customer-name" placeholder="Enter customer name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="Enter location" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="status">Status</label>
+                        <select id="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Non-active">Non-active</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="profile-picture">Profile Picture</label>
+                        <input type="file" id="profile-picture" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn-primary">Add Customer</button>
+                </form>
+            </div>        
         </div>
     </div>
     <script src="JS/customers-list.js"></script>

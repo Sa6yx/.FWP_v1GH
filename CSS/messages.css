@@ -337,14 +337,29 @@ aside .sidebar .message-count {
     color: var(--color-info-dark);
 }
 
-.message-content {
+.message-content .sender{
     padding: 1rem;
     background: var(--color-light);
-    border-radius: var(--border-radius-1);
+    border-radius: var(--border-radius-3);
     margin-bottom: 1.5rem;
 }
 
-.message-content p {
+.message-content .sender p {
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.message-content .reply {
+    padding: 1rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius-3);
+    margin-bottom: 1.5rem;
+    margin-left: auto;  
+    max-width: 70%;
+    text-align: left;
+}
+
+.message-content .reply p {
     color: var(--color-dark);
     margin: 0;
 }
@@ -501,5 +516,171 @@ aside .sidebar .message-count {
 .archive-btn:hover {
     background: var(--color-primary);
     color: var(--color-white);
+}
+
+/*============ RIGHT ==================================================================================================================*/
+
+/* User Profile */
+.user-profile {
+    margin-top: 2rem;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.user-profile:hover {
+    box-shadow: none;
+}
+
+.user-profile h3 {
+    margin-bottom: 0rem;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    padding-bottom: 0.5rem;
+}
+
+.user-profile .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-profile .profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--color-dark);
+    transition: all 300ms ease;
+}
+
+.user-profile .profile-info img:hover {
+    border-color: var(--color-primary);
+}
+
+.user-profile .profile-info .details p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.user-profile .profile-info .details small {
+    font-size: 0.8rem;
+    color: var(--color-info-dark);
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quick-actions button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-3);
+    cursor: pointer;
+    transition: all 300ms ease;
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+}
+
+.quick-actions .btn-primary {
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.quick-actions .btn-primary:hover {
+    background: var(--color-dark);
+}
+
+.quick-actions .btn-secondary {
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.quick-actions .btn-secondary:hover {
+    background: var(--color-dark);
+}
+
+/* Notifications */
+.notifications {
+    margin-top: 1.5rem;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.notifications:hover {
+    box-shadow: none;
+}
+
+.notifications h3 {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    padding-bottom: 0.5rem;
+}
+
+.notifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-light);
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+}
+
+.notifications ul li:last-child {
+    border-bottom: none;
+}
+
+/* Recent Activity */
+.recent-activity {
+    margin-top: 1.5rem;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.recent-activity:hover {
+    box-shadow: none;
+}
+
+.recent-activity h3 {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    padding-bottom: 0.5rem;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-light);
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+}
+
+.recent-activity ul li:last-child {
+    border-bottom: none;
 }
 
