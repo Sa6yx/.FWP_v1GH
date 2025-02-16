@@ -212,3 +212,75 @@
     background: var(--color-dark);
     color: var(--color-white);
 }
+
+/*====================== RIGHT ========================================================================================================*/
+
+.quick-actions {
+    margin-bottom: 1rem;
+}
+
+.quick-actions button {
+    display: inline-flex;
+    align-items: center;
+    width: 48%;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    background: var(--color-light);
+    border-radius: var(--card-border-radius);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    transition: all 300ms ease;
+}
+
+.quick-actions button:hover {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.quick-actions button i {
+    margin-left: 0.5rem;
+}
+
+
+.notifications {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+    transition: all 300ms ease;
+}
+
+.notifications:hover {
+    box-shadow: none;
+}
+
+.recent-activity {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+    transition: all 300ms ease;
+}
+
+.recent-activity:hover {
+    box-shadow: none;
+}
+
+.notifications h3, .recent-activity h3 {
+    margin-bottom: 0.5rem;
+}
+
+.notifications ul, .recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications li, .recent-activity li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+}
