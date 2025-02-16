@@ -1,40 +1,17 @@
-const sideMenu = document.querySelector("aside");
-const menuBtn = document.querySelector("#menu-btn")
-const closeBtn = document.querySelector("#close-btn")
 
-const themeToggler = document.querySelector(".theme-toggler")
+//==================== THEME CHANGER =================================================================================================//
 
-//Clock
-function updateClock() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const timeString = `${hours} : ${minutes} : ${seconds}`;
-    document.getElementById('clock').textContent = timeString;
-  }
-  
-  updateClock(); // Call the function once to initialize the clock
-  setInterval(updateClock, 1000); // Update the clock every second
-
-//show sidebar
-menuBtn.addEventListener('click', () => {
-    sideMenu.style.display = 'block';
-})
-
-//close sidebar
-closeBtn.addEventListener('click', () => {
-    sideMenu.style.display = 'none';
-})
-
-//change theme
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
     const themeToggler = document.querySelector(".theme-toggler");
-    if (!themeToggler) return; // If there is no switch, abort the execution
+    if (!themeToggler) {
+        console.error("Theme toggler not found!");
+        return;
+    }
 
     const body = document.body;
 
-    // Function for applying the topic
+    // Function for applying the theme
     function applyTheme(theme) {
         if (theme === "dark") {
             body.classList.add("dark-theme-variables");
@@ -59,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Clock
+
+//============== CLOCK ===============================================================================================================//
 function updateClock() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
@@ -72,19 +50,25 @@ function updateClock() {
 updateClock(); // Call the function once to initialize the clock
 setInterval(updateClock, 1000); // Update the clock every second
 
-// Show sidebar
+//========== SHOW SIDEBAR IN SMALL SCREENS ===========================================================================================//
+
+const sideMenu = document.querySelector("aside");
+const menuBtn = document.querySelector("#menu-btn")
+const closeBtn = document.querySelector("#close-btn")
+
+//show sidebar
 menuBtn.addEventListener('click', () => {
     sideMenu.style.display = 'block';
-});
+})
 
-// Close sidebar
+//close sidebar
 closeBtn.addEventListener('click', () => {
     sideMenu.style.display = 'none';
-});
+})
 
 // ========================= CUSTOMERS ================================================================================================ //
 
-// Function to fill the customers table
+//==================== FILL CUSTOMERS TABLE ============================================================================================//
 function fillCustomersTable(customersToShow) {
     const tableBody = document.querySelector('.recent-customers table tbody');
     tableBody.innerHTML = ''; // Clear the table before filling
@@ -108,7 +92,34 @@ function fillCustomersTable(customersToShow) {
     });
 }
 
-// Function to filter customers by region
+// Initially show only 8 customers
+fillCustomersTable(Customers.slice(0, 8));
+
+// ======= SHOW ALL/LESS ==============================================================================================================//
+const showAllBtn = document.querySelector('.recent-customers a');
+
+showAllBtn.addEventListener('click', () => {
+    const selectedRegion = document.getElementById('region-select').value;
+    if (showAllBtn.textContent === 'Show All') {
+        if (selectedRegion === "All") {
+            fillCustomersTable(Customers); // Show all customers
+        } else {
+            const filteredCustomers = Customers.filter(customer => customer.location.includes(selectedRegion));
+            fillCustomersTable(filteredCustomers); // Show all customers from the selected region
+        }
+        showAllBtn.textContent = 'Show Less';
+    } else {
+        if (selectedRegion === "All") {
+            fillCustomersTable(Customers.slice(0, 8)); // Show only 8 customers
+        } else {
+            const filteredCustomers = Customers.filter(customer => customer.location.includes(selectedRegion));
+            fillCustomersTable(filteredCustomers.slice(0, 8)); // Show only 8 customers from the selected region
+        }
+        showAllBtn.textContent = 'Show All';
+    }
+});
+
+// =========== FILTER CUSTOMERS BY REGION ============================================================================================ //
 function filterCustomersByRegion(region) {
     if (region === "All") {
         fillCustomersTable(Customers.slice(0, 8)); // Show only 8 customers initially
@@ -117,7 +128,15 @@ function filterCustomersByRegion(region) {
         fillCustomersTable(filteredCustomers); // Show customers from the selected region
     }
 }
-//search
+
+// Add event listener for region filter
+const regionSelect = document.getElementById('region-select');
+regionSelect.addEventListener('change', (event) => {
+const selectedRegion = event.target.value;
+filterCustomersByRegion(selectedRegion);
+});
+
+// ===== SEARCH CUSTOMERS BY /NAME /PHONE-NUMBER/ REGION/ ============================================================================ //
 const searchInput = document.getElementById('search-input');
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
@@ -128,7 +147,7 @@ searchInput.addEventListener('input', () => {
     );
     fillCustomersTable(filteredCustomers);
 });
-//sort
+//========= SORT SYSTEM =============================================================================================================== //
 function sortTable(column) {
     Customers.sort((a, b) => {
         if (a[column] < b[column]) return -1;
@@ -138,7 +157,7 @@ function sortTable(column) {
     fillCustomersTable(Customers);
 }
 
-//pagination
+//========== PAGINATION =============================================================================================================== //
 let currentPage = 1;
 const customersPerPage = 8;
 
@@ -163,36 +182,3 @@ document.getElementById('prev-page').addEventListener('click', () => {
     }
 });
 
-// Add event listener for region filter
-    const regionSelect = document.getElementById('region-select');
-    regionSelect.addEventListener('change', (event) => {
-    const selectedRegion = event.target.value;
-    filterCustomersByRegion(selectedRegion);
-});
-
-// Initially show only 8 customers
-fillCustomersTable(Customers.slice(0, 8));
-
-// Show All / Show Less functionality
-const showAllBtn = document.querySelector('.recent-customers a');
-
-showAllBtn.addEventListener('click', () => {
-    const selectedRegion = document.getElementById('region-select').value;
-    if (showAllBtn.textContent === 'Show All') {
-        if (selectedRegion === "All") {
-            fillCustomersTable(Customers); // Show all customers
-        } else {
-            const filteredCustomers = Customers.filter(customer => customer.location.includes(selectedRegion));
-            fillCustomersTable(filteredCustomers); // Show all customers from the selected region
-        }
-        showAllBtn.textContent = 'Show Less';
-    } else {
-        if (selectedRegion === "All") {
-            fillCustomersTable(Customers.slice(0, 8)); // Show only 8 customers
-        } else {
-            const filteredCustomers = Customers.filter(customer => customer.location.includes(selectedRegion));
-            fillCustomersTable(filteredCustomers.slice(0, 8)); // Show only 8 customers from the selected region
-        }
-        showAllBtn.textContent = 'Show All';
-    }
-});

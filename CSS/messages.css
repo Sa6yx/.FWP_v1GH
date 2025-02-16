@@ -306,11 +306,20 @@ aside .sidebar .message-count {
 }
 
 .message-header {
+    justify-content: space-between;
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
+
+.message-header .sender {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 
 .message-header img {
     width: 3rem;
@@ -456,7 +465,7 @@ aside .sidebar .message-count {
     color: var(--color-warning);
 }
 
-/*----------MARK AS READ ------------*/
+/*----------MARK AS READ / ARCHIVE ------------*/
 
 .mark-as-read-btn {
     background: var(--color-light);
@@ -472,6 +481,24 @@ aside .sidebar .message-count {
 }
 
 .mark-as-read-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.archive-btn {
+    background: var(--color-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark-variant);
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin-left: 0.3rem;
+}
+
+.archive-btn:hover {
     background: var(--color-primary);
     color: var(--color-white);
 }

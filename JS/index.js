@@ -1,10 +1,6 @@
-const sideMenu = document.querySelector("aside");
-const menuBtn = document.querySelector("#menu-btn")
-const closeBtn = document.querySelector("#close-btn")
 
-const themeToggler = document.querySelector(".theme-toggler")
 
-//Clock
+//============== CLOCK ===============================================================================================================//
 function updateClock() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
@@ -12,10 +8,16 @@ function updateClock() {
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const timeString = `${hours} : ${minutes} : ${seconds}`;
     document.getElementById('clock').textContent = timeString;
-  }
+}
 
-  updateClock(); // Call the function once to initialize the clock
-  setInterval(updateClock, 1000); // Update the clock every second
+updateClock(); // Call the function once to initialize the clock
+setInterval(updateClock, 1000); // Update the clock every second
+
+//========== SHOW SIDEBAR IN SMALL SCREENS ===========================================================================================//
+
+const sideMenu = document.querySelector("aside");
+const menuBtn = document.querySelector("#menu-btn")
+const closeBtn = document.querySelector("#close-btn")
 
 //show sidebar
 menuBtn.addEventListener('click', () => {
@@ -27,7 +29,9 @@ closeBtn.addEventListener('click', () => {
     sideMenu.style.display = 'none';
 })
 
-//change theme
+//==================== THEME CHANGER =================================================================================================//
+// not working in sections - reports and messages //
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
     const themeToggler = document.querySelector(".theme-toggler");
@@ -63,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-//fill orders in table
+//================== FILL ORDERS / DASHBOARD ===========================================================================================//
 function fillOrdersTable(ordersToShow) {
     const tableBody = document.querySelector('table tbody');
     tableBody.innerHTML = '';
@@ -82,7 +86,6 @@ function fillOrdersTable(ordersToShow) {
     });
 }
 
-
 fillOrdersTable(Orders.slice(0, 5));
 
 const showAllBtn = document.querySelector('.recent-orders a');
@@ -98,6 +101,8 @@ showAllBtn.addEventListener('click', () => {
 });
 
 //============== SETTINGS =============================================================================================================//
+
+//================= PROF UPDATES =================//
 // Updating the user name
 function updateUsername() {
     const newUsername = document.getElementById('username').value;
