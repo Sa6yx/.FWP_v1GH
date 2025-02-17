@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABYR WEB PR2 - Settings</title>
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/settings.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,72 +75,262 @@
         <!----------------------- END OF ASIDE ------------------------------->
         <main>
             <h1>Settings</h1>
-            <div class="date">
-                <input type="date">
-                <div id="clock"></div>
-            </div>
             <div class="settings-container">
-                <div class="settings">
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">light</i>Theme</h3>
-                        <div class="theme-toggler">
-                            <i class="material-symbols-sharp active">light_mode</i>
-                            <i class="material-symbols-sharp">dark_mode</i>
-                        </div>
+                <div class="settings-list">
+                    <h2>Settings Categories</h2>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search settings...">
+                        <i class="fas fa-search"></i>
                     </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">notifications</i>Notifications</h3>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
+                    <div class="setting-item active" data-target="theme-settings">
+                        <h4 class="setting-title">Theme</h4>
+                        <p class="setting-description">Change the theme of the application</p>
+                        <small class="text-muted">Last updated: 2 days ago</small>
                     </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">translate</i>Language</h3>
-                        <select>
-                            <option value="en">English</option>
-                            <option value="ru">Russian</option>
-                            <option value="kg">Kyrgyz</option>
-                        </select>
+                    <div class="setting-item" data-target="notification-settings">
+                        <h4 class="setting-title">Notifications</h4>
+                        <p class="setting-description">Manage notification preferences</p>
+                        <small class="text-muted">Last updated: 1 week ago</small>
                     </div>
-                    <div class="setting-item">
-                        <h3><i class="material-symbols-sharp s4i">privacy_tip</i>Privacy</h3>
-                        <button class="btn-primary">Manage Privacy Settings</button>
+                    <div class="setting-item" data-target="language-settings">
+                        <h4 class="setting-title">Language</h4>
+                        <p class="setting-description">Change the language of the application</p>
+                        <small class="text-muted">Last updated: 3 days ago</small>
+                    </div>
+                    <div class="setting-item" data-target="privacy-settings">
+                        <h4 class="setting-title">Privacy</h4>
+                        <p class="setting-description">Manage privacy settings</p>
+                        <small class="text-muted">Last updated: 5 days ago</small>
+                    </div>
+                    <div class="setting-item" data-target="account-settings">
+                        <h4 class="setting-title">Account</h4>
+                        <p class="setting-description">Manage your account settings</p>
+                        <small class="text-muted">Last updated: 1 day ago</small>
+                    </div>
+                    <div class="setting-item" data-target="security-settings">
+                        <h4 class="setting-title">Security</h4>
+                        <p class="setting-description">Manage security settings</p>
+                        <small class="text-muted">Last updated: 4 days ago</small>
                     </div>
                 </div>
-                <!--prof sett-->
-                <div class="profile-settings">
-                    <h2>Profile Settings</h2>
-                    <div class="setting-item">
-                        <h3>User Name</h3>
-                        <div class="input-group">
-                            <input type="text" id="username" placeholder="Enter new username">
-                            <button class="btn-primary" onclick="updateUsername()">Save</button>
+                <div class="settings-details">
+                    <div id="theme-settings" class="setting-section active">
+                        <h2>Theme Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/theme-icon.png" alt="Theme Icon"> -->
+                            <i class="material-symbols-sharp">contrast</i>
+                            <div class="setting-info">
+                                <h4>Theme</h4>
+                                <small class="text-muted">Last updated: 2 days ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Choose between light and dark themes for the application</p>
+                            <div class="section">
+                                <h3>Theme Options</h3>
+                                <ul>
+                                    <li><strong>Light Theme:</strong> Default theme with light colors</li>
+                                    <li><strong>Dark Theme:</strong> Dark theme for reduced eye strain in low light conditions</li>
+                                </ul>
+                                <p>You can switch between themes using the toggle below</p>
+                            </div>
+                            <div class="theme-toggler">
+                                <i class="material-symbols-sharp active">light_mode</i>
+                                <i class="material-symbols-sharp">dark_mode</i>
+                            </div>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
                         </div>
                     </div>
-                    <div class="setting-item">
-                        <h3>Profile Picture</h3>
-                        <div class="profile-photo-upload">
-                            <img id="profile-picture" src="images/gojo.jpg" alt="Profile Picture">
-                            <input type="file" id="profile-picture-input" accept="image/*" onchange="updateProfilePicture(event)">
-                            <label for="profile-picture-input" class="btn-primary">Upload Photo</label>
+
+                    <div id="notification-settings" class="setting-section">
+                        <h2>Notification Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/notification-icon.png" alt="Notification Icon"> -->
+                            <i class="material-symbols-sharp">notifications</i>
+                            <div class="setting-info">
+                                <h4>Notifications</h4>
+                                <small class="text-muted">Last updated: 1 week ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Manage your notification preferences for the application</p>
+                            <div class="section">
+                                <h3>Notification Types</h3>
+                                <ul>
+                                    <li><strong>Email Notifications:</strong> Receive notifications via email</li>
+                                    <li><strong>Push Notifications:</strong> Receive notifications on your device</li>
+                                    <li><strong>SMS Notifications:</strong> Receive notifications via SMS</li>
+                                </ul>
+                                <p>You can enable or disable each type of notification below</p>
+                            </div>
+                            <div class="notification-options">
+                                <label>
+                                    <input type="checkbox" checked> Email Notifications
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Push Notifications
+                                </label>
+                                <label>
+                                    <input type="checkbox"> SMS Notifications
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
                         </div>
                     </div>
-                    <div class="setting-item">
-                        <h3>Contact Information</h3>
-                        <div class="input-group">
-                            <input type="email" id="email" placeholder="Enter new email">
-                            <input type="tel" id="phone" placeholder="Enter new phone number">
-                            <button class="btn-primary" onclick="updateContactInfo()">Save</button>
+
+                    <div id="language-settings" class="setting-section">
+                        <h2>Language Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/language-icon.png" alt="Language Icon"> -->
+                            <i class="material-symbols-sharp">language</i>
+                            <div class="setting-info">
+                                <h4>Language</h4>
+                                <small class="text-muted">Last updated: 3 days ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Change the language of the application</p>
+                            <div class="section">
+                                <h3>Available Languages</h3>
+                                <ul>
+                                    <li><strong>English:</strong> Default language</li>
+                                    <li><strong>Russian:</strong> Русский язык</li>
+                                    <li><strong>Kyrgyz:</strong> Кыргыз тили</li>
+                                </ul>
+                                <p>Select your preferred language from the dropdown below</p>
+                            </div>
+                            <select>
+                                <option value="en">English</option>
+                                <option value="ru">Russian</option>
+                                <option value="kg">Kyrgyz</option>
+                            </select>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
                         </div>
                     </div>
-                    <div class="setting-item">
-                        <h3>Password</h3>
-                        <div class="input-group">
-                            <input type="password" id="current-password" placeholder="Current password">
-                            <input type="password" id="new-password" placeholder="New password">
-                            <input type="password" id="confirm-password" placeholder="Confirm new password">
-                            <button class="btn-primary" onclick="updatePassword()">Save</button>
+
+                    <div id="privacy-settings" class="setting-section">
+                        <h2>Privacy Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/privacy-icon.png" alt="Privacy Icon"> -->
+                            <i class="material-symbols-sharp">security</i>
+                            <div class="setting-info">
+                                <h4>Privacy</h4>
+                                <small class="text-muted">Last updated: 5 days ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Manage your privacy settings for the application</p>
+                            <div class="section">
+                                <h3>Privacy Options</h3>
+                                <ul>
+                                    <li><strong>Data Sharing:</strong> Allow the application to share data with third parties</li>
+                                    <li><strong>Data Collection:</strong> Allow the application to collect usage data</li>
+                                    <li><strong>Data Retention:</strong> Set how long your data is retained</li>
+                                </ul>
+                                <p>You can enable or disable each privacy option below</p>
+                            </div>
+                            <div class="privacy-options">
+                                <label>
+                                    <input type="checkbox"> Data Sharing
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Data Collection
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Data Retention
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
+                        </div>
+                    </div>
+
+                    <div id="account-settings" class="setting-section">
+                        <h2>Account Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/account-icon.png" alt="Account Icon"> -->
+                            <i class="material-symbols-sharp">account_circle</i>
+                            <div class="setting-info">
+                                <h4>Account</h4>
+                                <small class="text-muted">Last updated: 1 day ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Manage your account settings</p>
+                            <div class="section">
+                                <h3>Account Information</h3>
+                                <ul>
+                                    <li><strong>Username:</strong> Change your username</li>
+                                    <li><strong>Email:</strong> Update your email address</li>
+                                    <li><strong>Password:</strong> Change your password</li>
+                                </ul>
+                                <p>You can update your account information below</p>
+                            </div>
+                            <div class="account-options">
+                                <label>
+                                    <input type="text" placeholder="Enter new username">
+                                </label>
+                                <label>
+                                    <input type="email" placeholder="Enter new email">
+                                </label>
+                                <label>
+                                    <input type="password" placeholder="Enter new password">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
+                        </div>
+                    </div>
+
+                    <div id="security-settings" class="setting-section">
+                        <h2>Security Settings</h2>
+                        <div class="setting-header">
+                            <!-- <img src="images/security-icon.png" alt="Security Icon"> -->
+                            <i class="material-symbols-sharp">verified_user</i>
+                            <div class="setting-info">
+                                <h4>Security</h4>
+                                <small class="text-muted">Last updated: 4 days ago</small>
+                            </div>
+                        </div>
+                        <div class="setting-content">
+                            <p>Manage your security settings for the application</p>
+                            <div class="section">
+                                <h3>Security Options</h3>
+                                <ul>
+                                    <li><strong>Two-Factor Authentication:</strong> Enable two-factor authentication for added security</li>
+                                    <li><strong>Password Reset:</strong> Reset your password</li>
+                                    <li><strong>Session Management:</strong> Manage active sessions</li>
+                                </ul>
+                                <p>You can enable or disable each security option below</p>
+                            </div>
+                            <div class="security-options">
+                                <label>
+                                    <input type="checkbox"> Two-Factor Authentication
+                                </label>
+                                <label>
+                                    <input type="checkbox"> Password Reset
+                                </label>
+                                <label>
+                                    <input type="checkbox"> Session Management
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="secondary">Reset to Default</button>
                         </div>
                     </div>
                 </div>
@@ -151,6 +342,10 @@
                 <button id="menu-btn">
                     <i class="material-symbols-sharp">menu</i>
                 </button>
+                <div class="theme-toggler">
+                    <i class="material-symbols-sharp active">light_mode</i>
+                    <i class="material-symbols-sharp">dark_mode</i>
+                </div>
                 <div class="profile">
                     <div class="info">
                         <p>Hey, <b>Sabyr</b></p>
@@ -161,8 +356,39 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="btn-new-setting">
+                    <i class="material-symbols-sharp">add</i>
+                    <span>New Setting</span>
+                </button>
+                <button class="btn-export-settings">
+                    <i class="material-symbols-sharp">file_download</i>
+                    <span>Export Settings</span>
+                </button>
+            </div>
+        
+            <!-- Notifications -->
+            <div class="notifications">
+                <h3>Notifications</h3>
+                <ul>
+                    <li>New setting: Theme Settings</li>
+                    <li>Pending action: Review Privacy Settings</li>
+                </ul>
+            </div>
+        
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <ul>
+                    <li>Viewed Theme Settings</li>
+                    <li>Updated Notification Settings</li>
+                </ul>
+            </div>
         </div>
     </div>
+    <script src="JS/settings.js"></script>
     <script src="JS/index.js"></script>
 </body>
-</html> 
+</html>
