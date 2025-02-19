@@ -5,7 +5,7 @@
 - restyled settings
 - added reports
 
--- NEED TO FIX theme changer! - FIXED
+-- NEED TO FIX theme changer! - (FIXED!)
 
 ///////////
 17.02.25
@@ -15,4 +15,13 @@
 - organized customers-list.js
 - added fake report
 
--- NEED TO RESTYLE SETTINGS!
+-- NEED TO RESTYLE SETTINGS! - (DONE!)
+
+//////////
+20.02.25
+
+- changed scroll bar in settings (categories)
+- restyled the theme toggler in settings
+- added togglers for notification/privacy/security settings
+
+-- NEED TO FIX SEARCH BAR IN SETTINGS! - 

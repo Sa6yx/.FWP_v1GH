@@ -14,7 +14,7 @@
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
     height: 70vh;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .settings-list:hover {
@@ -190,6 +190,10 @@
 }
 
 .setting-content .theme-toggler {
+    width: 4.8rem;
+    padding: 0.4rem 0.4rem;
+    border-radius: var(--border-radius-1);
+    background: var(--color-primary);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -204,7 +208,7 @@
 }
 
 .setting-content .theme-toggler i.active {
-    color: var(--color-primary);
+    color: var(--color-white-alt)
 }
 
 .setting-content .notification-options,
@@ -284,6 +288,74 @@
 .setting-actions button.secondary:hover {
     background: var(--color-dark);
     color: var(--color-white);
+}
+
+.categories-list {
+    height: calc(70vh - 150px);
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+/*--scroll bar---------*/
+.categories-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.categories-list::-webkit-scrollbar-track {
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+}
+
+.categories-list::-webkit-scrollbar-thumb {
+    background: var(--color-dark-variant);
+    border-radius: var(--border-radius-1);
+}
+
+.categories-list::-webkit-scrollbar-thumb:hover {
+    background: var(--color-dark);
+}
+
+/*----------------- Toggler Styles in some sections (security and notifications)--------------------*/
+.toggler {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+.toggler input {
+    display: none;
+}
+
+.toggler-slider {
+    width: 40px;
+    height: 20px;
+    background: var(--color-light);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggler-slider::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--color-white);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggler input:checked + .toggler-slider {
+    background: var(--color-primary);
+}
+
+.toggler input:checked + .toggler-slider::before {
+    transform: translateX(20px);
 }
 
 

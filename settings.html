@@ -82,35 +82,37 @@
                         <input type="text" placeholder="Search settings...">
                         <i class="fas fa-search"></i>
                     </div>
-                    <div class="setting-item active" data-target="theme-settings">
-                        <h4 class="setting-title">Theme</h4>
-                        <p class="setting-description">Change the theme of the application</p>
-                        <small class="text-muted">Last updated: 2 days ago</small>
-                    </div>
-                    <div class="setting-item" data-target="notification-settings">
-                        <h4 class="setting-title">Notifications</h4>
-                        <p class="setting-description">Manage notification preferences</p>
-                        <small class="text-muted">Last updated: 1 week ago</small>
-                    </div>
-                    <div class="setting-item" data-target="language-settings">
-                        <h4 class="setting-title">Language</h4>
-                        <p class="setting-description">Change the language of the application</p>
-                        <small class="text-muted">Last updated: 3 days ago</small>
-                    </div>
-                    <div class="setting-item" data-target="privacy-settings">
-                        <h4 class="setting-title">Privacy</h4>
-                        <p class="setting-description">Manage privacy settings</p>
-                        <small class="text-muted">Last updated: 5 days ago</small>
-                    </div>
-                    <div class="setting-item" data-target="account-settings">
-                        <h4 class="setting-title">Account</h4>
-                        <p class="setting-description">Manage your account settings</p>
-                        <small class="text-muted">Last updated: 1 day ago</small>
-                    </div>
-                    <div class="setting-item" data-target="security-settings">
-                        <h4 class="setting-title">Security</h4>
-                        <p class="setting-description">Manage security settings</p>
-                        <small class="text-muted">Last updated: 4 days ago</small>
+                    <div class="categories-list">
+                        <div class="setting-item active" data-target="theme-settings">
+                            <h4 class="setting-title">Theme</h4>
+                            <p class="setting-description">Change the theme of the application</p>
+                            <small class="text-muted">Last updated: 2 days ago</small>
+                        </div>
+                        <div class="setting-item" data-target="notification-settings">
+                            <h4 class="setting-title">Notifications</h4>
+                            <p class="setting-description">Manage notification preferences</p>
+                            <small class="text-muted">Last updated: 1 week ago</small>
+                        </div>
+                        <div class="setting-item" data-target="language-settings">
+                            <h4 class="setting-title">Language</h4>
+                            <p class="setting-description">Change the language of the application</p>
+                            <small class="text-muted">Last updated: 3 days ago</small>
+                        </div>
+                        <div class="setting-item" data-target="privacy-settings">
+                            <h4 class="setting-title">Privacy</h4>
+                            <p class="setting-description">Manage privacy settings</p>
+                            <small class="text-muted">Last updated: 5 days ago</small>
+                        </div>
+                        <div class="setting-item" data-target="account-settings">
+                            <h4 class="setting-title">Account</h4>
+                            <p class="setting-description">Manage your account settings</p>
+                            <small class="text-muted">Last updated: 1 day ago</small>
+                        </div>
+                        <div class="setting-item" data-target="security-settings">
+                            <h4 class="setting-title">Security</h4>
+                            <p class="setting-description">Manage security settings</p>
+                            <small class="text-muted">Last updated: 4 days ago</small>
+                        </div>
                     </div>
                 </div>
                 <div class="settings-details">
@@ -167,14 +169,20 @@
                                 <p>You can enable or disable each type of notification below</p>
                             </div>
                             <div class="notification-options">
-                                <label>
-                                    <input type="checkbox" checked> Email Notifications
+                                <label class="toggler">
+                                    <input type="checkbox" checked>
+                                    <span class="toggler-slider"></span>
+                                    Email Notifications
                                 </label>
-                                <label>
-                                    <input type="checkbox" checked> Push Notifications
+                                <label class="toggler">
+                                    <input type="checkbox" checked>
+                                    <span class="toggler-slider"></span>
+                                    Push Notifications
                                 </label>
-                                <label>
-                                    <input type="checkbox"> SMS Notifications
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    SMS Notifications
                                 </label>
                             </div>
                         </div>
@@ -239,14 +247,20 @@
                                 <p>You can enable or disable each privacy option below</p>
                             </div>
                             <div class="privacy-options">
-                                <label>
-                                    <input type="checkbox"> Data Sharing
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Data Sharing
                                 </label>
-                                <label>
-                                    <input type="checkbox" checked> Data Collection
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Data Collection
                                 </label>
-                                <label>
-                                    <input type="checkbox" checked> Data Retention
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Data Retention
                                 </label>
                             </div>
                         </div>
@@ -317,14 +331,20 @@
                                 <p>You can enable or disable each security option below</p>
                             </div>
                             <div class="security-options">
-                                <label>
-                                    <input type="checkbox"> Two-Factor Authentication
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Two-Factor Authentication
                                 </label>
-                                <label>
-                                    <input type="checkbox"> Password Reset
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Password Reset
                                 </label>
-                                <label>
-                                    <input type="checkbox"> Session Management
+                                <label class="toggler">
+                                    <input type="checkbox">
+                                    <span class="toggler-slider"></span>
+                                    Session Management
                                 </label>
                             </div>
                         </div>
@@ -342,10 +362,6 @@
                 <button id="menu-btn">
                     <i class="material-symbols-sharp">menu</i>
                 </button>
-                <div class="theme-toggler">
-                    <i class="material-symbols-sharp active">light_mode</i>
-                    <i class="material-symbols-sharp">dark_mode</i>
-                </div>
                 <div class="profile">
                     <div class="info">
                         <p>Hey, <b>Sabyr</b></p>

@@ -153,8 +153,3 @@ if (settingsList) {
 // Initially hide the Account and Security sections
 const accountSection = document.querySelector(".setting-item[data-target='account-settings']");
 const securitySection = document.querySelector(".setting-item[data-target='security-settings']");
-
-if (accountSection && securitySection) {
-    accountSection.classList.add("hidden"); // Hide Account section initially
-    securitySection.classList.add("hidden"); // Hide Security section initially
-}
