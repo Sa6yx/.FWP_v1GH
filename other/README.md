@@ -24,4 +24,6 @@
 - restyled the theme toggler in settings
 - added togglers for notification/privacy/security settings
 
+- created new page "products"
+
 -- NEED TO FIX SEARCH BAR IN SETTINGS! - 

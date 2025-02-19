@@ -30,10 +30,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 //==================== THEME CHANGER =================================================================================================//
-// not working in sections - reports and messages //
-
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded and parsed");
     const themeToggler = document.querySelector(".theme-toggler");
     if (!themeToggler) {
         console.error("Theme toggler not found!");
