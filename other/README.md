@@ -26,4 +26,9 @@
 
 - created new page "products"
 
+- added images for products
+- added some people in section messages
+
 -- NEED TO FIX SEARCH BAR IN SETTINGS! - 
+-- NEED TO FIX SEARCH BAR IN PRODUCTS! - 
+-- NEED TO FIX SEARCH BAR IN REPORTS! - 
