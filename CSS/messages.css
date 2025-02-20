@@ -15,6 +15,7 @@
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    
 }
 
 .messages-list:hover {
@@ -138,6 +139,8 @@
     background: var(--color-light);
     border-radius: var(--border-radius-3);
     margin-bottom: 1.5rem;
+    margin-right: auto;
+    max-width: 80%;
 }
 
 .message-content .sender p {
@@ -151,13 +154,23 @@
     border-radius: var(--border-radius-3);
     margin-bottom: 1.5rem;
     margin-left: auto;  
-    max-width: 70%;
+    max-width: 80%;
     text-align: left;
 }
 
 .message-content .reply p {
     color: var(--color-dark);
     margin: 0;
+}
+
+.message-content .sender + .sender,
+.message-content .reply + .reply {
+    margin-top: -1rem;
+}
+
+.message-content .sender:last-child,
+.message-content .reply:last-child {
+    margin-bottom: 1.5rem;
 }
 
 .message-reply textarea {
@@ -312,6 +325,30 @@
 .archive-btn:hover {
     background: var(--color-primary);
     color: var(--color-white);
+}
+
+.profiles-list {
+    height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem; 
+}
+
+.profiles-list::-webkit-scrollbar {
+    width: 4px; 
+}
+
+.profiles-list::-webkit-scrollbar-track {
+    background: var(--color-light);
+    border-radius: 4px;
+}
+
+.profiles-list::-webkit-scrollbar-thumb {
+    background: var(--color-dark-variant);
+    border-radius: 4px;
+}
+
+.profiles-list::-webkit-scrollbar-thumb:hover {
+    background: var(--color-dark);
 }
 
 /*============ RIGHT ==================================================================================================================*/

@@ -32,3 +32,9 @@
 -- NEED TO FIX SEARCH BAR IN SETTINGS! - 
 -- NEED TO FIX SEARCH BAR IN PRODUCTS! - 
 -- NEED TO FIX SEARCH BAR IN REPORTS! - 
+
+/////////
+21.02.25
+
+- added scroll bar in messages
+- added some messages
