@@ -1,41 +1,3 @@
-//==================== THEME CHANGER =================================================================================================//
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded and parsed");
-    const themeToggler = document.querySelector(".theme-toggler");
-    if (!themeToggler) {
-        console.error("Theme toggler not found!");
-        return;
-    }
-
-    const body = document.body;
-
-    // Function for applying the theme
-    function applyTheme(theme) {
-        if (theme === "dark") {
-            body.classList.add("dark-theme-variables");
-            themeToggler.querySelector('i:nth-child(1)').classList.remove('active');
-            themeToggler.querySelector('i:nth-child(2)').classList.add('active');
-        } else {
-            body.classList.remove("dark-theme-variables");
-            themeToggler.querySelector('i:nth-child(1)').classList.add('active');
-            themeToggler.querySelector('i:nth-child(2)').classList.remove('active');
-        }
-    }
-
-    // Load the theme on page load
-    const savedTheme = localStorage.getItem("theme") || "light";
-    applyTheme(savedTheme);
-
-    // Theme switch handler
-    themeToggler.addEventListener("click", () => {
-        const newTheme = body.classList.contains("dark-theme-variables") ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-        applyTheme(newTheme);
-    });
-});
-
-
 //============== CLOCK ===============================================================================================================//
 // function updateClock() {
 //     const now = new Date();
@@ -111,9 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 ],
             },
             2: {
-                name: "Choso",
-                email: "choso@sabytor.com",
-                image: "images/choso.jpg",
+                name: "Suguru Geto",
+                email: "geto@sabytor.com",
+                image: "images/geto.jpg",
                 messages: [
                     { sender: "We need to discuss the new project timeline. Are you available for a meeting?" },
                     { reply: "Yes, I'm free tomorrow at 10 AM. Does that work for you?" },
@@ -124,9 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 ],
             },
             3: {
-                name: "Toji Fushiguro",
-                email: "toji@sabytor.com",
-                image: "images/toji.jpg",
+                name: "Choso",
+                email: "choso@sabytor.com",
+                image: "images/choso.jpg",
                 messages: [
                     { sender: "Please review the attached document and let me know your thoughts" },
                     { reply: "I've reviewed the document. It looks great, but I have a few suggestions" },
@@ -137,30 +99,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 ],
             },
             4: {
-                name: "Choso",
-                email: "choso@sabytor.com",
-                image: "images/choso.jpg",
+                name: "Toji Fushiguro",
+                email: "toji@sabytor.com",
+                image: "images/toji.jpg",
                 messages: [
-                    { sender: "We need to discuss the new project timeline" },
-                    { reply: "Sure, let's schedule a meeting." },
+                    { sender: "Quick question about the project timeline" },
+                    { reply: "Sure, what's your question?" },
+                    { sender: "Are we still on track for the original deadline?" },
+                    { reply: "Yes, we are currently on schedule" },
                 ],
             },
             5: {
-                name: "Choso",
-                email: "choso@sabytor.com",
-                image: "images/choso.jpg",
+                name: "Tazhibaev Khamidillo",
+                email: "khamid@sabytor.com",
+                image: "images/user3.jpeg",
                 messages: [
-                    { sender: "We need to discuss the new project timeline" },
-                    { reply: "Sure, let's schedule a meeting." },
+                    { sender: "Did you get a chance to look at the new design mockups?" },
+                    { reply: "Yes, I did. They look very promising" },
+                    { sender: "Great! Any initial thoughts?" },
+                    { reply: "I think the color scheme is excellent" },
                 ],
             },
             6: {
-                name: "Choso",
-                email: "choso@sabytor.com",
-                image: "images/choso.jpg",
+                name: "Ruslan Abdykadyrov",
+                email: "ruslan@sabytor.com",
+                image: "images/user3.jpeg",
                 messages: [
-                    { sender: "We need to discuss the new project timeline" },
-                    { reply: "Sure, let's schedule a meeting." },
+                    { sender: "Just a reminder about the meeting tomorrow morning" },
+                    { reply: "Thanks for the reminder! I'll be there" },
+                    { sender: "Perfect. See you then" },
+                    { reply: "Looking forward to it" },
                 ],
             },
             // more users 

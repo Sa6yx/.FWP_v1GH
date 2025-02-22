@@ -1,3 +1,5 @@
+//====== IN DASHBOARD ==================================================================================================================//
+
 const Orders = [
     {
         productName: 'Drone with camera',
@@ -79,3 +81,46 @@ const Orders = [
     }
     
 ]
+
+
+//============ IN ORDERS =============================================================================================================//
+
+
+//====== SORT SYSTEM ================//
+
+function sortTable(column) {
+    const table = document.querySelector('.recent-orders table');
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const header = table.querySelector(`th[onclick="sortTable('${column}')"]`);
+    const isAscending = header.classList.toggle('asc');
+
+    rows.sort((a, b) => {
+        const aValue = a.querySelector(`td:nth-child(${getColumnIndex(column)})`).textContent.trim();
+        const bValue = b.querySelector(`td:nth-child(${getColumnIndex(column)})`).textContent.trim();
+
+        if (column === 'amount') {
+            // Sort by numeric value for the "Amount" column
+            return isAscending ? parseFloat(aValue.replace('$', '')) - parseFloat(bValue.replace('$', '')) :
+                                parseFloat(bValue.replace('$', '')) - parseFloat(aValue.replace('$', ''));
+        } else {
+            // Sort by string for other columns
+            return isAscending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+        }
+    });
+
+    // Clear the table and append sorted rows
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+// Helper function to get the column index based on the column name
+function getColumnIndex(column) {
+    const headers = document.querySelectorAll('.recent-orders table th');
+    for (let i = 0; i < headers.length; i++) {
+        if (headers[i].getAttribute('onclick')?.includes(column)) {
+            return i + 1; // +1 because nth-child is 1-based
+        }
+    }
+    return 1; // Default to the first column if not found
+}

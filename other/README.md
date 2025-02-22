@@ -38,3 +38,10 @@
 
 - added scroll bar in messages
 - added some messages
+
+/////////
+22.02.25
+
+- created new page orders
+- created page analytics
+- fixed the theme changer

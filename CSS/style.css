@@ -867,7 +867,7 @@ main .recent-customers table tbody tr:last-child td {
 }
 
 main .recent-customers a {
-     text-align: center;
+     text-align: left;
      display: block;
      margin: 1rem auto;
      color: var(--color-primary);

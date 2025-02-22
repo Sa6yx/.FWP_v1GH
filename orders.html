@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reports - SABYTOR</title>
+    <title>SABYR WEB PR2 - Orders</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/reports.css">
+    <link rel="stylesheet" href="CSS/orders.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
                     <i class="material-symbols-sharp">person_outline</i>
                     <h3>Customers</h3>
                 </a>
-                <a href="#">
+                <a href="orders.html" class="active">
                     <i class="material-symbols-sharp">receipt_long</i>
                     <h3>Orders</h3>
                 </a>
@@ -54,7 +54,7 @@
                     <i class="material-symbols-sharp">inventory</i>
                     <h3>Products</h3>
                 </a>
-                <a href="reports.html" class="active">
+                <a href="reports.html">
                     <i class="material-symbols-sharp">report_gmailerrorred</i>
                     <h3>Reports</h3>
                 </a>
@@ -74,70 +74,79 @@
         </aside>
         <!----------------------- END OF ASIDE ------------------------------->
         <main>
-            <h1>Reports</h1>
-            <div class="reports-container">
-                <div class="reports-list">
-                    <h2>Report List</h2>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search reports...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="filter-options">
-                        <button class="filter-btn active">All</button>
-                        <button class="filter-btn">Recent</button>
-                        <button class="filter-btn">Archived</button>
-                    </div>
-                    <div class="report-item active">
-                        <h4 class="report-title">Monthly Sales Report</h4>
-                        <p class="report-description">Summary of sales performance for the month</p>
-                        <small class="text-muted">Last updated: 2 days ago</small>
-                    </div>
-                    <div class="report-item">
-                        <h4 class="report-title">Customer Feedback Analysis</h4>
-                        <p class="report-description">Analysis of customer feedback and satisfaction</p>
-                        <small class="text-muted">Last updated: 1 week ago</small>
-                    </div>
-                    <div class="report-item">
-                        <h4 class="report-title">Inventory Status</h4>
-                        <p class="report-description">Current inventory levels and stock status</p>
-                        <small class="text-muted">Last updated: 3 days ago</small>
-                    </div>
-                </div>
-                <div class="report-details">
-                    <h2>Report Details</h2>
-                    <div class="report-header">
-                        <img src="images/rep.jpg" alt="Report Icon">
-                        <div class="report-info">
-                            <h4>Monthly Sales Report</h4>
-                            <small class="text-muted">Reported on: 2025-02-16</small>
-                        </div>
-                    </div>
-                    <div class="report-content">
-                        <p>This report provides a detailed analysis of the sales performance for the month of February 2025. It includes data on total revenue, top-selling products, and regional sales breakdown</p>
-                        <div class="section">
-                            <h3>Regional Sales Breakdown</h3>
-                            <ul>
-                                <li><strong>North America:</strong> $500,000 (40% of total revenue)</li>
-                                <li><strong>Europe:</strong> $400,000 (32% of total revenue)</li>
-                                <li><strong>Asia-Pacific:</strong> $300,000 (24% of total revenue)</li>
-                                <li><strong>Other Regions:</strong> $50,000 (4% of total revenue)</li>
-                            </ul>
-                            <p>Europe saw a significant 18% increase in sales compared to the previous month, driven by successful marketing campaigns. The Asia-Pacific region also showed steady growth, with a 10% increase in revenue.</p>
-                        </div>
-                        <div class="section">
-                            <h3>Recommendations</h3>
-                            <ul>
-                                <li>Increase inventory for top-selling products to meet the rising demand.</li>
-                                <li>Expand marketing efforts in the Asia-Pacific region to capitalize on growth opportunities.</li>
-                                <li>Consider introducing new eco-friendly products to maintain consumer interest and drive future sales.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="report-actions">
-                        <button class="btn-primary">Download PDF</button>
-                        <button class="secondary">Share</button>
-                    </div>
-                </div>
+            <h1>Orders</h1>
+            <div class="recent-orders">
+                <table>
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('orderId')">Order ID <i class="material-symbols-sharp">sort</i></th>
+                            <th onclick="sortTable('customer')">Customer <i class="material-symbols-sharp">sort</i></th>
+                            <th onclick="sortTable('product')">Product <i class="material-symbols-sharp">sort</i></th>
+                            <th onclick="sortTable('amount')">Amount <i class="material-symbols-sharp">sort</i></th>
+                            <th onclick="sortTable('status')">Status <i class="material-symbols-sharp">sort</i></th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>Toji Fushiguro</td>
+                            <td>Laptop Pro X</td>
+                            <td>$1200</td>
+                            <td class="success">Completed</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>Tadzhibaev Khamidillo</td>
+                            <td>Smartphone Ultra</td>
+                            <td>$800</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12347</td>
+                            <td>Aika Asanova</td>
+                            <td>Smart Watch</td>
+                            <td>$250</td>
+                            <td class="danger">Declined</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12348</td>
+                            <td>Ruslan Abdykadyrov</td>
+                            <td>Wireless Earbuds</td>
+                            <td>$150</td>
+                            <td class="success">Completed</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12349</td>
+                            <td>Gulnara Sadykova</td>
+                            <td>Wireless Earbuds</td>
+                            <td>$150</td>
+                            <td class="success">Completed</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12350</td>
+                            <td>Azamat Tuleberdiev</td>
+                            <td>Men's Shirt</td>
+                            <td>$40</td>
+                            <td class="success">Completed</td>
+                            <td class="primary">View</td>
+                        </tr>
+                        <tr>
+                            <td>#12351</td>
+                            <td>Meerim Zhumasheva</td>
+                            <td>Wireless Earbuds</td>
+                            <td>$150</td>
+                            <td class="success">Completed</td>
+                            <td class="primary">View</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
             </div>
         </main>
         <!----------------------- END OF MAIN ------------------------------->
@@ -163,13 +172,13 @@
         
             <!-- Quick Actions -->
             <div class="quick-actions">
-                <button class="btn-new-report">
+                <button class="btn-new-order">
                     <i class="material-symbols-sharp">add</i>
-                    <span>New Report</span>
+                    <span>Add Order</span>
                 </button>
-                <button class="btn-export-data">
+                <button class="btn-export-orders">
                     <i class="material-symbols-sharp">file_download</i>
-                    <span>Export Data</span>
+                    <span>Export Orders</span>
                 </button>
             </div>
         
@@ -177,8 +186,8 @@
             <div class="notifications">
                 <h3>Notifications</h3>
                 <ul>
-                    <li>New report: Monthly Sales Report</li>
-                    <li>Pending action: Review Customer Feedback Analysis</li>
+                    <li>New order received: #12349</li>
+                    <li>Pending action: Review order #12346</li>
                 </ul>
             </div>
         
@@ -186,14 +195,14 @@
             <div class="recent-activity">
                 <h3>Recent Activity</h3>
                 <ul>
-                    <li>Viewed Monthly Sales Report</li>
-                    <li>Updated Inventory Status Report</li>
+                    <li>Viewed order #12345</li>
+                    <li>Updated status of order #12347</li>
                 </ul>
             </div>
         </div>
     </div>
-    <script src="JS/reports.js"></script>
     <script src="JS/index.js"></script>
+    <script src="JS/orders.js"></script>
     <script src="JS/theme-changer.js"></script>
 </body>
-</html> 
+</html>
