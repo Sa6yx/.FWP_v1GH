@@ -1,0 +1,136 @@
+/*=================== ADD PRODUCT FORM ================================================================================================= */
+.add-product-form {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    margin-top: 2rem;
+}
+
+.add-product-form:hover {
+    box-shadow: none;
+}
+
+/* Two-Column Layout */
+.form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.add-product-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.add-product-form input[type="text"],
+.add-product-form input[type="number"],
+.add-product-form input[type="file"],
+.add-product-form textarea,
+.add-product-form select {
+    background-color: var(--color-light);
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    transition: all 300ms ease;
+}
+
+.add-product-form input[type="text"]:focus,
+.add-product-form input[type="number"]:focus,
+.add-product-form input[type="file"]:focus,
+.add-product-form textarea:focus,
+.add-product-form select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(115, 128, 236, 0.2);
+}
+
+.add-product-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.add-product-form .productDescription textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.add-product-form .btn-primary {
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius-1);
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin-top: 1.5rem;
+}
+
+.add-product-form .btn-primary:hover {
+    background: var(--color-dark);
+}
+
+/* File Input Styling */
+.add-product-form input[type="file"] {
+    padding: 0.5rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+}
+
+.add-product-form input[type="file"]::file-selector-button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.add-product-form input[type="file"]::file-selector-button:hover {
+    background: var(--color-dark);
+}
+
+/* == RESPONSIVE DESIGN =================== */
+@media screen and (max-width: 768px) {
+    .add-product-form {
+        padding: 1rem;
+    }
+
+    .add-product-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .add-product-form input[type="text"],
+    .add-product-form input[type="number"],
+    .add-product-form input[type="file"],
+    .add-product-form textarea,
+    .add-product-form select {
+        padding: 0.5rem;
+    }
+
+    .add-product-form .btn-primary {
+        padding: 0.5rem;
+    }
+}

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Customer Insights Chart
     const customerCtx = document.getElementById('customerChart').getContext('2d');
     const customerChart = new Chart(customerCtx, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
             labels: ['New Customers', 'Returning Customers'],
             datasets: [{

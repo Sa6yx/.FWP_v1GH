@@ -45,3 +45,13 @@
 - created new page orders
 - created page analytics
 - fixed the theme changer
+
+/////////
+25.02.25
+
+- restyled customers page (show all/pagination)
+- restyled quick actions section in some pages
+- restyled theme toggler in settings
+- restyled recent orders in dashboard
+- created new page 'Add Product'
+- added quick stats/recent activities (analytics)

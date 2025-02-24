@@ -76,6 +76,8 @@
 
 .quick-actions {
     margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .quick-actions button {
@@ -100,9 +102,6 @@
 
 .quick-actions button i {
     margin-left: 0.5rem;
-}
-.quick-actions button span {
-    margin-left: -0.5em;
 }
 
 .notifications {

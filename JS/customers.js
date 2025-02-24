@@ -58,7 +58,7 @@ function fillCustomersTable(customersToShow) {
 fillCustomersTable(Customers.slice(0, 8));
 
 // ======= SHOW ALL/LESS ==============================================================================================================//
-const showAllBtn = document.querySelector('.recent-customers a');
+const showAllBtn = document.querySelector('.pagination a');
 
 showAllBtn.addEventListener('click', () => {
     const selectedRegion = document.getElementById('region-select').value;
