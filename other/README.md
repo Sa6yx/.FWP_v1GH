@@ -1,3 +1,6 @@
+LOGIN: Sabyr
+PASSWORD: SabyrADMIN
+
 ////////////
 16.02.2025
 
